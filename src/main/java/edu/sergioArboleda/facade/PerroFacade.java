@@ -1,19 +1,20 @@
 package edu.sergioArboleda.facade;
 
-import com.mycompany.jpa.Student;
+import com.mycompany.jpa.Perro;
 import edu.sergioArboleda.dao.ServiceImpl;
 import edu.sergioArboleda.dao.SingletonConnection;
 import edu.sergioArboleda.exception.ConexionException;
 import java.util.List;
 import javax.persistence.EntityManager;
-
 /**
  *
- * @author Fabian Giraldo
+ * @author Nicolas Chicuazuque
  */
-public class StudentFacade extends ServiceImpl<Student>{
-    public StudentFacade() throws ConexionException {
-        super(Student.class);
+
+
+public class PerroFacade extends ServiceImpl<Perro> {
+     public PerroFacade() throws ConexionException {
+        super(Perro.class);
         try{
              EntityManager em = SingletonConnection.getConnection();
             super.setEntityManager(em);
@@ -24,7 +25,7 @@ public class StudentFacade extends ServiceImpl<Student>{
     }
     
     @Override
-    public List<Student> findAll() {
+    public List<Perro> findAll() {
         return super.findAll();
     }
 }
